@@ -19,6 +19,18 @@ if (! class_exists('DateTimeImmutable')) {
             $this->datetime = new DateTime($time, $timezone);
         }
 
+        /**
+         * @param array $array
+         *
+         * @return DateTimeImmutable
+         */
+        public static function __set_state(array $array)
+        {
+            $datetime = clone $this->datetime;
+            $datetime->__set_state($array);
+            return static::createFromMutable($datetime);
+        }
+
         public function __wakeup()
         {
             $this->datetime->__wakeup();

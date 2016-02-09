@@ -26,8 +26,7 @@ if (! class_exists('DateTimeImmutable')) {
          */
         public static function __set_state(array $array)
         {
-            $datetime = clone $this->datetime;
-            $datetime->__set_state($array);
+            $datetime = DateTime::__set_state($array);
             return static::createFromMutable($datetime);
         }
 
@@ -103,7 +102,7 @@ if (! class_exists('DateTimeImmutable')) {
          */
         public static function getLastErrors()
         {
-            return $this->datetime->getLastErrors();
+            return DateTime::getLastErrors();
         }
 
         /**

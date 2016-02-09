@@ -1,0 +1,11 @@
+{
+    "autoload": {
+        "files": [
+            "src/DateTimeInterface.php",
+            "src/DateTimeImmutable.php"
+        ]
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.8"
+    }
+}
